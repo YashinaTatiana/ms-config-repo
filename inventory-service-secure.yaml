@@ -1,0 +1,23 @@
+server:
+  port: 8183
+
+spring:
+  application:
+    name: inventory-service
+  datasource:
+    url: jdbc:h2:mem:inventory-db
+    username: sa
+    password: "{cipher}4424fac55ae5257bed109d9ba934ac659a7a5b8feb5bfb11637a33d70426fed9"
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
